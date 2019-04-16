@@ -1,3 +1,3 @@
 
 
-https://eiuapp.gitlab.io/fenbox-vagrantfile-note/
+https://eiuapp.github.io/fenbox-vagrantfile-handbook
