@@ -4,7 +4,7 @@
 
 <!-- - GitHub地址：https://github.com/eiuapp/vagrant-handbook -->
 
-- 在线访问地址：https://eiuapp.gitlab.io/vagrant-handbook
+- 在线访问地址：https://eiuapp.github.io/vagrant-handbook
 
 
 
