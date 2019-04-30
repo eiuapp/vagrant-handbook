@@ -17,6 +17,7 @@
 * [本机访问vagrant端口](docs/host-access-to-vagrant.md)
 * [通过 ssh 登录 vagrant box](docs/vagrant-box-ssh-login.md)
 * [Vagrant更改默认的SSH端口](docs/change-default-ssh-forward-port-in-vagrant.md)
+* [Vagrant增加硬盘容量实践记录](docs/vagrant-add-vm-harddisk-size.md)
 
 ## 随笔
 
