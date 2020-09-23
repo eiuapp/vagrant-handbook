@@ -1,14 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/docs/fenbox-vagrantfile-note.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/docs/change-vagrant_home-directory-windows.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/docs/virtualbox-install-path.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/docs/solaris-install-nginx.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/docs/usage.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/docs/host-access-to-vagrant.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-box-ssh-login.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/docs/change-default-ssh-forward-port-in-vagrant.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-add-vm-harddisk-size.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://eiuapp.github.io/vagrant-handbook/docs/note-about-vagrant.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/install-vagrant/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-install-solaris/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/note-about-vagrant/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-add-vm-harddisk-size/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/change-default-ssh-forward-port-in-vagrant/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/change-vagrant-home-directory-windows/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-install-mysql/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-box-ssh-login/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/fenbox-vagrantfile-note/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/virtualbox-install-path/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/host-access-to-vagrant/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/vagrant-handbook/docs/</loc>
+    <lastmod>2020-09-23T14:30:34+08:00</lastmod>
+  </url>
+  
 </urlset>

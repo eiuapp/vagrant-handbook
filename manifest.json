@@ -1,0 +1,15 @@
+{
+  "name": "vagrant",
+  "short_name": "vagrant",
+  "start_url": "/vagrant-handbook/",
+  "scope": "/vagrant-handbook/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/vagrant-handbook/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}

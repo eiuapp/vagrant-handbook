@@ -2,21 +2,20 @@
 <html lang="en" dir=>
 
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Introduction">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Introduction" />
-<meta property="og:description" content="Introduction" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://eiuapp.github.io/vagrant-handbook/" />
-<meta property="og:updated_time" content="2020-09-23T14:30:34+08:00" />
-<title>Introduction | vagrant</title>
+<meta name="description" content="windows下切换vagrant_home目录">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="windows下切换vagrant_home目录" />
+<meta property="og:description" content="windows下切换vagrant_home目录" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://eiuapp.github.io/vagrant-handbook/docs/change-vagrant-home-directory-windows/" />
+<meta property="article:published_time" content="2020-09-10T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-09-23T14:30:34+08:00" />
+<title>windows下切换vagrant_home目录 | vagrant</title>
 <link rel="manifest" href="/vagrant-handbook/manifest.json">
 <link rel="icon" href="/vagrant-handbook/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/vagrant-handbook/book.min.134b70e5316650a530cb42e4e8630b2a01d532bebfc0337028211175336e4806.css" integrity="sha256-E0tw5TFmUKUwy0Lk6GMLKgHVMr6/wDNwKCERdTNuSAY=">
 <script defer src="/vagrant-handbook/en.search.min.f415870f6f235a918cc87bbaf8613ca2b428c179726df2c5c4d5da41e6defad7.js" integrity="sha256-9BWHD28jWpGMyHu6&#43;GE8orQowXlybfLFxNXaQebe&#43;tc="></script>
-<link rel="alternate" type="application/rss+xml" href="https://eiuapp.github.io/vagrant-handbook/index.xml" title="vagrant" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -71,7 +70,7 @@ https://github.com/alex-shpak/hugo-book
 <p><a href="/vagrant-handbook/docs/virtualbox-install-path/">我的Vagrant安装后 virtualbox 目录</a></p>
 </li>
 <li>
-<p><a href="/vagrant-handbook/docs/change-vagrant-home-directory-windows/">windows下切换vagrant_home目录</a></p>
+<p><a href="/vagrant-handbook/docs/change-vagrant-home-directory-windows/"class=active>windows下切换vagrant_home目录</a></p>
 </li>
 <li>
 <p><strong>vagrant与vbox</strong></p>
@@ -130,7 +129,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/vagrant-handbook/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Introduction</strong>
+  <strong>windows下切换vagrant_home目录</strong>
 
   <label for="toc-control">
     
@@ -145,11 +144,10 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#学习笔记">学习笔记</a>
+    <li><a href="#windows下切换vagrant-home目录">windows下切换vagrant_home目录</a>
       <ul>
-        <li><a href="#内容介绍">内容介绍</a></li>
-        <li><a href="#访问方式">访问方式</a></li>
-        <li><a href="#版权申明">版权申明</a></li>
+        <li><a href="#step">step</a></li>
+        <li><a href="#ref">ref</a></li>
       </ul>
     </li>
   </ul>
@@ -163,29 +161,62 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="学习笔记">
-  学习笔记
-  <a class="anchor" href="#%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">#</a>
+  <article class="markdown"><h2 id="windows下切换vagrant-home目录">
+  windows下切换vagrant_home目录
+  <a class="anchor" href="#windows%e4%b8%8b%e5%88%87%e6%8d%a2vagrant-home%e7%9b%ae%e5%bd%95">#</a>
 </h2>
-<h3 id="内容介绍">
-  内容介绍
-  <a class="anchor" href="#%e5%86%85%e5%ae%b9%e4%bb%8b%e7%bb%8d">#</a>
+<h3 id="step">
+  step
+  <a class="anchor" href="#step">#</a>
 </h3>
-<p>关于 <a href="https://github.com/hashicorp/vagrant">vagrant</a> , 主要包括一些学习笔记</p>
-<h3 id="访问方式">
-  访问方式
-  <a class="anchor" href="#%e8%ae%bf%e9%97%ae%e6%96%b9%e5%bc%8f">#</a>
+<p>管理员打开 cmd</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:\Windows\system32&gt;setx VAGRANT_HOME &#34;E:\ProgramFiles\VagrantHome&#34;
+
+成功: 指定的值已得到保存。
+
+C:\Windows\system32&gt;set VAGRANT_HOME
+环境变量 VAGRANT_HOME 没有定义
+
+C:\Windows\system32&gt;set path
+Path=C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\ja
+vapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System
+32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Calib
+re2\;C:\HashiCorp\Vagrant\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\ming
+w64\bin;C:\Program Files\Git\usr\bin;C:\Users\tony\Anaconda;C:\Users\tony\Anacon
+da\Scripts;C:\Wind\Wind.NET.Client\WindNET\bin\;C:\Users\tony\AppData\Roaming\np
+m;C:\Program Files\nodejs\node.exe;C:\Program Files (x86)\Microsoft VS Code\bin
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+
+C:\Windows\system32&gt;setx VAGRANT_HOME &#34;E:\ProgramFiles\VagrantHome&#34;
+
+成功: 指定的值已得到保存。
+
+C:\Windows\system32&gt;set VAGRANT_HOME
+环境变量 VAGRANT_HOME 没有定义
+
+C:\Windows\system32&gt;
+</code></pre></div><p>这时，要关闭此cmd窗口，然后打开一个新的cmd窗口。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:\Users\tony&gt;set path
+Path=C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\ja
+vapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System
+32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Calib
+re2\;C:\HashiCorp\Vagrant\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\ming
+w64\bin;C:\Program Files\Git\usr\bin;C:\Users\tony\Anaconda;C:\Users\tony\Anacon
+da\Scripts;C:\Wind\Wind.NET.Client\WindNET\bin\;C:\Users\tony\AppData\Roaming\np
+m;C:\Program Files\nodejs\node.exe;C:\Program Files (x86)\Microsoft VS Code\bin
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+
+C:\Users\tony&gt;set vagrant_home
+VAGRANT_HOME=E:\ProgramFiles\VagrantHome
+
+C:\Users\tony&gt;
+</code></pre></div><h3 id="ref">
+  ref
+  <a class="anchor" href="#ref">#</a>
 </h3>
-<p>请点击下面的链接阅读:</p>
 <ul>
-<li><a href="https://eiuapp.github.io/vagrant-handbook/">在线阅读</a>：hugo格式，界面清爽。</li>
-<li><a href="https://github.com/eiuapp/vagrant-handbook/">@github</a>：源码托管于github，如有谬误或需讨论，请提issue，欢迎提交PR</li>
+<li><a href="https://harvsworld.com/2014/change-vagrant%5C%5Fhome-directory-windows/">https://harvsworld.com/2014/change-vagrant%5C%5Fhome-directory-windows/</a></li>
 </ul>
-<h3 id="版权申明">
-  版权申明
-  <a class="anchor" href="#%e7%89%88%e6%9d%83%e7%94%b3%e6%98%8e">#</a>
-</h3>
-<p>本笔记内容可以任意转载，但请注明来源并提供链接，*请勿用于商业出版*。</p>
 </article>
  
       
@@ -205,7 +236,7 @@ https://github.com/alex-shpak/hugo-book
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/eiuapp/vagrant-handbook/edit/master/content//_index.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/eiuapp/vagrant-handbook/edit/master/content//docs/change-vagrant-home-directory-windows.md" target="_blank" rel="noopener">
       <img src="/vagrant-handbook/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
@@ -233,11 +264,10 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#学习笔记">学习笔记</a>
+    <li><a href="#windows下切换vagrant-home目录">windows下切换vagrant_home目录</a>
       <ul>
-        <li><a href="#内容介绍">内容介绍</a></li>
-        <li><a href="#访问方式">访问方式</a></li>
-        <li><a href="#版权申明">版权申明</a></li>
+        <li><a href="#step">step</a></li>
+        <li><a href="#ref">ref</a></li>
       </ul>
     </li>
   </ul>

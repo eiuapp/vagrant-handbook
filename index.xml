@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on vagrant</title>
+    <link>https://eiuapp.github.io/vagrant-handbook/</link>
+    <description>Recent content in Introduction on vagrant</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://eiuapp.github.io/vagrant-handbook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>install vagrant</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/install-vagrant/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/install-vagrant/</guid>
+      <description>env #   os: ubuntu  install #  download #  https://www.vagrantup.com/downloads.html</description>
+    </item>
+    
+    <item>
+      <title>vagrant install solaris10</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-install-solaris/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-install-solaris/</guid>
+      <description>vagrant install solaris10 #  使用solaries安装编译nginx, 要搭建一个测试环境，所以用vagrant安装个solaris10.
+D:\迅雷下载 λ vagrant.exe box add solaris10-minimal-version0.0.1 .\tnarik-boxes-solaris10-minimal-versions0.0.1.box ==&amp;gt; box: Box file was not detected as metadata. Adding it directly... ==&amp;gt; box: Adding box &amp;#39;solaris10-minimal-version0.0.1&amp;#39; (v0) for provider: box: Unpacking necessary files from: file://D:/%D1%B8%C0%D7%CF%C2%D4%D8/tnarik-boxes-solaris10-minimal-versions0.0.1.box box: Progress: 100% (Rate: 37.8M/s, Estimated time remaining: --:--:--) ==&amp;gt; box: Successfully added box &amp;#39;solaris10-minimal-version0.0.1&amp;#39; (v0) for &amp;#39;virtualbox&amp;#39;! D:\迅雷下载 λ vagrant box list solaris10-minimal-version0.0.1 (virtualbox, 0) D:\迅雷下载 λ </description>
+    </item>
+    
+    <item>
+      <title>vagrant 其它笔记</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/note-about-vagrant/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/note-about-vagrant/</guid>
+      <description>Vagrant box add 命令加载过慢最简单的处理方式
+https://www.jianshu.com/p/f569d687d1e2
+https://www.jianshu.com/p/b9f5bf8b7f27 https://www.k-dou.com/2018/06/08/26.html https://juejin.im/post/5a769057f265da4e8700a34a https://www.vagrantup.com/ https://www.k-dou.com/2018/06/08/26.html https://zhuanlan.zhihu.com/p/34684496
+http://www.vagrantbox.es/ 打开 如果 通过 privoxy 8118 打不开，则要通过 sock5 1080 打开。
+官方镜像: https://app.vagrantup.com/boxes/search 更多镜像: http://www.vagrantbox.es/
+https://app.vagrantup.com/bento/boxes/ubuntu-18.04/versions/201812.27.0/providers/virtualbox.box https://vagrantcloud.com/bento/boxes/ubuntu-18.04/versions/201812.27.0/providers/virtualbox.box</description>
+    </item>
+    
+    <item>
+      <title>vagrant 增加硬盘容量实践记录</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-add-vm-harddisk-size/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-add-vm-harddisk-size/</guid>
+      <description>vagrant 增加硬盘容量实践记录 #  https://www.jianshu.com/p/b1acd5d8d53e
+严格来说,这篇文章,应该属于virtualbox
+env #   os: windows10 virtualbox: 6.0 powershell: 管理员权限打开  找到 VM 所在文件夹. #  管理/全局设置/默认虚拟电脑位置
+打开virtualbox面板, 点击vm, 设置,存储,选中,明细,位置
+C:\Program Files\soft\cmder λ cd &amp;#39;C:\Users\a\VirtualBox VMs\ubuntu16_default_1555655333404_65452\&amp;#39; C:\Users\a\VirtualBox VMs\ubuntu16_default_1555655333404_65452警告: Missing git support, install posh-git with &amp;#39;Install-Module posh-git&amp;#39; and restart cmder. PS&amp;gt;ls 目录: C:\Users\a\VirtualBox VMs\ubuntu16_default_1555655333404_65452 Mode LastWriteTime Length Name ---- ------------- ------ ---- d----- 2019/4/29 18:08 Logs d----- 2019/4/20 11:47 Snapshots -a---- 2019/4/29 18:08 196608 ubuntu-xenial-16.04-cloudimg-configdrive.vmdk -a---- 2019/4/30 8:23 10298523648 ubuntu-xenial-16.</description>
+    </item>
+    
+    <item>
+      <title>Vagrant更改默认的SSH端口</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/change-default-ssh-forward-port-in-vagrant/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/change-default-ssh-forward-port-in-vagrant/</guid>
+      <description>Vagrant更改默认的SSH端口 #  通过学习，知道在 vagrantfile 中添加
+config.vm.network &amp;ldquo;forwarded\_port&amp;rdquo;, guest: 222, host: 3333
+D:\vag-files\ubuntu16 λ vagrant up Bringing machine &amp;#39;default&amp;#39; up with &amp;#39;virtualbox&amp;#39; provider... ==&amp;gt; default: Clearing any previously set forwarded ports... ==&amp;gt; default: Clearing any previously set network interfaces... ==&amp;gt; default: Preparing network interfaces based on configuration... default: Adapter 1: nat default: Adapter 2: bridged ==&amp;gt; default: Forwarding ports... default: 222 (guest) =&amp;gt; 2222 (host) (adapter 1) default: 22 (guest) =&amp;gt; 2222 (host) (adapter 1) ==&amp;gt; default: Running &amp;#39;pre-boot&amp;#39; VM customizations.</description>
+    </item>
+    
+    <item>
+      <title>windows下切换vagrant_home目录</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/change-vagrant-home-directory-windows/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/change-vagrant-home-directory-windows/</guid>
+      <description>windows下切换vagrant_home目录 #  step #  管理员打开 cmd
+C:\Windows\system32&amp;gt;setx VAGRANT_HOME &amp;#34;E:\ProgramFiles\VagrantHome&amp;#34; 成功: 指定的值已得到保存。 C:\Windows\system32&amp;gt;set VAGRANT_HOME 环境变量 VAGRANT_HOME 没有定义 C:\Windows\system32&amp;gt;set path Path=C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\ja vapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System 32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Calib re2\;C:\HashiCorp\Vagrant\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\ming w64\bin;C:\Program Files\Git\usr\bin;C:\Users\tony\Anaconda;C:\Users\tony\Anacon da\Scripts;C:\Wind\Wind.NET.Client\WindNET\bin\;C:\Users\tony\AppData\Roaming\np m;C:\Program Files\nodejs\node.exe;C:\Program Files (x86)\Microsoft VS Code\bin PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC C:\Windows\system32&amp;gt;setx VAGRANT_HOME &amp;#34;E:\ProgramFiles\VagrantHome&amp;#34; 成功: 指定的值已得到保存。 C:\Windows\system32&amp;gt;set VAGRANT_HOME 环境变量 VAGRANT_HOME 没有定义 C:\Windows\system32&amp;gt; 这时，要关闭此cmd窗口，然后打开一个新的cmd窗口。
+C:\Users\tony&amp;gt;set path Path=C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\ja vapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System 32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Calib re2\;C:\HashiCorp\Vagrant\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\ming w64\bin;C:\Program Files\Git\usr\bin;C:\Users\tony\Anaconda;C:\Users\tony\Anacon da\Scripts;C:\Wind\Wind.</description>
+    </item>
+    
+    <item>
+      <title>如何skip配置而直接安装mysql server</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-install-mysql/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-install-mysql/</guid>
+      <description>如何skip配置而直接安装mysql server #   https://unix.stackexchange.com/questions/147261/installing-mysql-server-in-vagrant-bootstrap-shell-script-how-to-skip-setup  </description>
+    </item>
+    
+    <item>
+      <title>如何通过 ssh 登录 vagrant box</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-box-ssh-login/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/vagrant-box-ssh-login/</guid>
+      <description>如何通过 ssh 登录 vagrant box #  得到 ssh-config
+D:\vag-files\ubuntu16 λ vagrant ssh-config WARNING: Vagrant has detected the `vagrant-triggers` plugin. This plugin conflicts with the internal triggers implementation. Please uninstall the `vagrant-triggers` plugin and run the command again if you wish to use the core trigger feature. To uninstall the plugin, run the command shown below: vagrant plugin uninstall vagrant-triggers Note that the community plugin `vagrant-triggers` and the core trigger feature in Vagrant do not have compatible syntax.</description>
+    </item>
+    
+    <item>
+      <title>安装示例</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/fenbox-vagrantfile-note/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/fenbox-vagrantfile-note/</guid>
+      <description>安装示例 #  https://eiuapp.github.io/fenbox-vagrantfile-handbook</description>
+    </item>
+    
+    <item>
+      <title>我的Vagrant安装后 virtualbox 目录</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/virtualbox-install-path/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/virtualbox-install-path/</guid>
+      <description>我的Vagrant安装后 virtualbox 目录 #  F:\VirtualBoxVMs\ud16.04.5-basic\Snapshots C:\Users\DELL.docker\machine\machines\default\default\Snapshots F:\VirtualBoxVMs\vagrant\_ubuntu18\_vb\Snapshots </description>
+    </item>
+    
+    <item>
+      <title>让本机访问vagrant端口</title>
+      <link>https://eiuapp.github.io/vagrant-handbook/docs/host-access-to-vagrant/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://eiuapp.github.io/vagrant-handbook/docs/host-access-to-vagrant/</guid>
+      <description>让本机访问vagrant端口 #  step #  方法1 端口转发 #  virtualbox-port-forward vagrant 在vagrangfile里面取消了public access的备注 #  使用bridge 模式 #  ref #   https://www.v2ex.com/t/86454  </description>
+    </item>
+    
+  </channel>
+</rss>

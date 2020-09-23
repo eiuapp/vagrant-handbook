@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Vagrant更改默认的SSH端口">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Vagrant更改默认的SSH端口" />
+<meta property="og:description" content="Vagrant更改默认的SSH端口" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://eiuapp.github.io/vagrant-handbook/docs/change-default-ssh-forward-port-in-vagrant/" />
+<meta property="article:published_time" content="2020-09-10T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-09-23T14:30:34+08:00" />
+<title>Vagrant更改默认的SSH端口 | vagrant</title>
+<link rel="manifest" href="/vagrant-handbook/manifest.json">
+<link rel="icon" href="/vagrant-handbook/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/vagrant-handbook/book.min.134b70e5316650a530cb42e4e8630b2a01d532bebfc0337028211175336e4806.css" integrity="sha256-E0tw5TFmUKUwy0Lk6GMLKgHVMr6/wDNwKCERdTNuSAY=">
+<script defer src="/vagrant-handbook/en.search.min.f415870f6f235a918cc87bbaf8613ca2b428c179726df2c5c4d5da41e6defad7.js" integrity="sha256-9BWHD28jWpGMyHu6&#43;GE8orQowXlybfLFxNXaQebe&#43;tc="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/vagrant-handbook"><span>vagrant</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><strong>install vagrant</strong></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/install-vagrant/">安装</a></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/fenbox-vagrantfile-note/">安装示例</a></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/virtualbox-install-path/">我的Vagrant安装后 virtualbox 目录</a></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/change-vagrant-home-directory-windows/">windows下切换vagrant_home目录</a></p>
+</li>
+<li>
+<p><strong>vagrant与vbox</strong></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/host-access-to-vagrant/">本机访问vagrant端口</a></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/vagrant-add-vm-harddisk-size/">Vagrant增加硬盘容量实践记录</a></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/vagrant-install-solaris/">vagrant install solaris10</a></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/vagrant-install-mysql/">vagrant install mysql server</a></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/vagrant-box-ssh-login/">通过 ssh 登录 vagrant box</a></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/change-default-ssh-forward-port-in-vagrant/"class=active>Vagrant更改默认的SSH端口</a></p>
+</li>
+<li>
+<p><strong>随笔</strong></p>
+</li>
+<li>
+<p><a href="/vagrant-handbook/docs/note-about-vagrant/">日志</a></p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/vagrant-handbook/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Vagrant更改默认的SSH端口</strong>
+
+  <label for="toc-control">
+    
+    <img src="/vagrant-handbook/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#vagrant更改默认的ssh端口">Vagrant更改默认的SSH端口</a>
+      <ul>
+        <li><a href="#ref">ref</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="vagrant更改默认的ssh端口">
+  Vagrant更改默认的SSH端口
+  <a class="anchor" href="#vagrant%e6%9b%b4%e6%94%b9%e9%bb%98%e8%ae%a4%e7%9a%84ssh%e7%ab%af%e5%8f%a3">#</a>
+</h2>
+<p>通过学习，知道在 vagrantfile 中添加</p>
+<p>config.vm.network &ldquo;forwarded\_port&rdquo;, guest: 222, host: 3333</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">D:<span style="color:#ae81ff">\v</span>ag-files<span style="color:#ae81ff">\u</span>buntu16
+λ  vagrant up
+Bringing machine <span style="color:#e6db74">&#39;default&#39;</span> up with <span style="color:#e6db74">&#39;virtualbox&#39;</span> provider...
+<span style="color:#f92672">==</span>&gt; default: Clearing any previously set forwarded ports...
+<span style="color:#f92672">==</span>&gt; default: Clearing any previously set network interfaces...
+<span style="color:#f92672">==</span>&gt; default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+<span style="color:#f92672">==</span>&gt; default: Forwarding ports...
+    default: <span style="color:#ae81ff">222</span> <span style="color:#f92672">(</span>guest<span style="color:#f92672">)</span> <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">2222</span> <span style="color:#f92672">(</span>host<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>adapter 1<span style="color:#f92672">)</span>
+    default: <span style="color:#ae81ff">22</span> <span style="color:#f92672">(</span>guest<span style="color:#f92672">)</span> <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">2222</span> <span style="color:#f92672">(</span>host<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>adapter 1<span style="color:#f92672">)</span>
+<span style="color:#f92672">==</span>&gt; default: Running <span style="color:#e6db74">&#39;pre-boot&#39;</span> VM customizations...
+<span style="color:#f92672">==</span>&gt; default: Booting VM...
+<span style="color:#f92672">==</span>&gt; default: Waiting <span style="color:#66d9ef">for</span> machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagran
+    default: SSH auth method: private key
+    default: Warning: Connection reset. Retrying...
+    default: Warning: Connection aborted. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+Timed out <span style="color:#66d9ef">while</span> waiting <span style="color:#66d9ef">for</span> the machine to boot. This means that
+Vagrant was unable to communicate with the guest machine within
+the configured <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;config.vm.boot_timeout&#34;</span> value<span style="color:#f92672">)</span> time period.
+
+If you look above, you should be able to see the error<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> that
+Vagrant had when attempting to connect to the machine. These errors
+are usually good hints as to what may be wrong.
+
+If you<span style="color:#e6db74">&#39;re using a custom box, make sure that networking is properly
+</span><span style="color:#e6db74">working and you&#39;</span>re able to connect to the machine. It is a common
+problem that networking isn<span style="color:#960050;background-color:#1e0010">&#39;</span>t setup properly in these boxes.
+Verify that authentication configurations are also setup properly,
+as well.
+
+If the box appears to be booting properly, you may want to increase
+the timeout <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;config.vm.boot_timeout&#34;</span><span style="color:#f92672">)</span> value.
+D:<span style="color:#ae81ff">\v</span>ag-files<span style="color:#ae81ff">\u</span>buntu16
+</code></pre></div><p>不行，然后搜索到：</p>
+<p><a href="https://tlanyan.me/change-default-ssh-forward-port-in-vagrant/">https://tlanyan.me/change-default-ssh-forward-port-in-vagrant/</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config.vm.network &#34;forwarded_port&#34;, guest: 22, host: 2222, id: &#34;ssh&#34;, disabled: &#34;true&#34;
+config.vm.network &#34;forwarded_port&#34;, guest: 222, host: 3333
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">D:<span style="color:#ae81ff">\v</span>ag-files<span style="color:#ae81ff">\u</span>buntu16
+λ  vagrant up
+Bringing machine <span style="color:#e6db74">&#39;default&#39;</span> up with <span style="color:#e6db74">&#39;virtualbox&#39;</span> provider...
+<span style="color:#f92672">==</span>&gt; default: Clearing any previously set forwarded ports...
+<span style="color:#f92672">==</span>&gt; default: Clearing any previously set network interfaces...
+<span style="color:#f92672">==</span>&gt; default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+<span style="color:#f92672">==</span>&gt; default: Forwarding ports...
+    default: <span style="color:#ae81ff">222</span> <span style="color:#f92672">(</span>guest<span style="color:#f92672">)</span> <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">3333</span> <span style="color:#f92672">(</span>host<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>adapter 1<span style="color:#f92672">)</span>
+<span style="color:#f92672">==</span>&gt; default: Running <span style="color:#e6db74">&#39;pre-boot&#39;</span> VM customizations...
+<span style="color:#f92672">==</span>&gt; default: Booting VM...
+<span style="color:#f92672">==</span>&gt; default: Waiting <span style="color:#66d9ef">for</span> machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:22
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+Timed out <span style="color:#66d9ef">while</span> waiting <span style="color:#66d9ef">for</span> the machine to boot. This means that
+Vagrant was unable to communicate with the guest machine within
+the configured <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;config.vm.boot_timeout&#34;</span> value<span style="color:#f92672">)</span> time period.
+
+If you look above, you should be able to see the error<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> that
+Vagrant had when attempting to connect to the machine. These errors
+are usually good hints as to what may be wrong.
+
+If you<span style="color:#e6db74">&#39;re using a custom box, make sure that networking is properly
+</span><span style="color:#e6db74">working and you&#39;</span>re able to connect to the machine. It is a common
+problem that networking isn<span style="color:#960050;background-color:#1e0010">&#39;</span>t setup properly in these boxes.
+Verify that authentication configurations are also setup properly,
+as well.
+
+If the box appears to be booting properly, you may want to increase
+the timeout <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;config.vm.boot_timeout&#34;</span><span style="color:#f92672">)</span> value.
+D:<span style="color:#ae81ff">\v</span>ag-files<span style="color:#ae81ff">\u</span>buntu16
+λ
+</code></pre></div><p>观察到，vm是启动起来了。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">D:<span style="color:#ae81ff">\v</span>ag-files<span style="color:#ae81ff">\u</span>buntu16
+λ  vagrant ssh-config
+Host default
+  HostName 127.0.0.1
+  User vagrant
+  Port <span style="color:#ae81ff">22</span>
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile D:/vag-files/ubuntu16/.vagrant/machines/default/virtualbox/private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+
+D:<span style="color:#ae81ff">\v</span>ag-files<span style="color:#ae81ff">\u</span>buntu16
+λ  ssh -i D:/vag-files/ubuntu16/.vagrant/machines/default/virtualbox/private_key -p <span style="color:#ae81ff">3333</span> vagrant@localhost
+Welcome to Ubuntu 16.04.6 LTS <span style="color:#f92672">(</span>GNU/Linux 4.4.0-145-generic x86_64<span style="color:#f92672">)</span>
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+<span style="color:#ae81ff">10</span> packages can be updated.
+<span style="color:#ae81ff">0</span> updates are security updates.
+
+New release <span style="color:#e6db74">&#39;18.04.2 LTS&#39;</span> available.
+Run <span style="color:#e6db74">&#39;do-release-upgrade&#39;</span> to upgrade to it.
+
+
+Last login: Tue Apr <span style="color:#ae81ff">23</span> 06:04:00 <span style="color:#ae81ff">2019</span> from 10.0.2.2
+vagrant@ubuntu-xenial:~$
+</code></pre></div><p>可以登录成功的. yeah!</p>
+<h3 id="ref">
+  ref
+  <a class="anchor" href="#ref">#</a>
+</h3>
+<ul>
+<li><a href="https://tlanyan.me/change-default-ssh-forward-port-in-vagrant/">https://tlanyan.me/change-default-ssh-forward-port-in-vagrant/</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/eiuapp/vagrant-handbook/commit/2b9187ef7f66b99b4a53105e9b5a4d199126db38" title='Last modified by zengyunlong | Sep 23, 2020' target="_blank" rel="noopener">
+      <img src="/vagrant-handbook/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Sep 23, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/eiuapp/vagrant-handbook/edit/master/content//docs/change-default-ssh-forward-port-in-vagrant.md" target="_blank" rel="noopener">
+      <img src="/vagrant-handbook/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#vagrant更改默认的ssh端口">Vagrant更改默认的SSH端口</a>
+      <ul>
+        <li><a href="#ref">ref</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
