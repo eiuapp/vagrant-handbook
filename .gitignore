@@ -1,0 +1,15 @@
+#.*
+!.gitignore
+/public/
+/resources*
+
+/update_theme.sh
+/update_theme_learn.sh
+/bak/
+/*.bak
+/content/temp/
+/archetypes/
+/sh/ 
+/init.sh
+/public-gh-pages.sh
+/project-name.sh
